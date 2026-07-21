@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lion Gym × Qiu Agency · Propuesta de Crecimiento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#0C0B09;
+  --panel:#14120E;
+  --panel2:#191611;
+  --linea:rgba(216,172,78,.16);
+  --linea2:rgba(216,172,78,.34);
+  --oro:#D8AC4E;
+  --oro-claro:#F3E3B4;
+  --oro-osc:#8C6A1D;
+  --amarillo:#F2C230;
+  --texto:#F0EDE6;
+  --muted:#A39F94;
+  --qiu:#4087BA;
+  --radius:14px;
+  --disp:'Anton', Impact, 'Arial Black', sans-serif;
+  --body:'Archivo', Arial, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--texto);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--oro);color:#14110A}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+section{scroll-margin-top:88px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+.eyebrow{display:flex;align-items:center;gap:10px;font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--oro)}
+.eyebrow .chev{color:var(--amarillo);letter-spacing:0;font-size:13px}
+.display{font-family:var(--disp);text-transform:uppercase;font-weight:400;line-height:1.08;letter-spacing:.01em}
+.skew{display:inline-block;transform:skewX(-6deg);padding-bottom:.06em}
+.gold-grad{background:linear-gradient(100deg,var(--oro-osc) 0%,var(--oro) 34%,var(--oro-claro) 58%,var(--oro) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.num{font-variant-numeric:tabular-nums;font-weight:800}
+.tag{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--linea2);border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--oro)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:.04em;border-radius:999px;padding:15px 28px;transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s,background .25s;cursor:pointer;border:1px solid transparent}
+.btn:active{transform:scale(.98)}
+.btn-oro{background:linear-gradient(120deg,var(--oro) 0%,var(--oro-claro) 120%);color:#14110A}
+.btn-oro:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(216,172,78,.22)}
+.btn-ghost{border-color:var(--linea2);color:var(--oro)}
+.btn-ghost:hover{background:rgba(216,172,78,.08);transform:translateY(-2px)}
+.btn .chev{color:inherit;font-weight:900}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+.sec-head{max-width:720px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(30px,4.4vw,46px);margin:14px 0 12px}
+.sec-head p{color:var(--muted);max-width:60ch}
+.note{font-size:12.5px;color:var(--muted)}
+
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(12,11,9,.88);backdrop-filter:blur(14px);border-color:var(--linea)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .lg{font-family:var(--disp);font-size:21px;letter-spacing:.05em;color:var(--texto)}
+.brand .lg b{color:var(--oro);font-weight:400}
+.brand .x{color:var(--muted);font-size:13px}
+.chip-qiu{display:flex;align-items:center;gap:8px;border:1px solid rgba(64,135,186,.4);border-radius:999px;padding:5px 12px 5px 6px;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--qiu)}
+.qiu-mono{width:22px;height:22px;border-radius:6px;background:#4087BA;color:#FFFFFF;display:grid;place-items:center;font-weight:800;font-size:9.5px;letter-spacing:0}
+.nav-links{display:flex;gap:26px;font-size:13.5px;font-weight:700;letter-spacing:.05em;color:var(--muted)}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--oro)}
+.nav .btn{padding:11px 20px;font-size:13px}
+@media(max-width:960px){.nav-links{display:none}}
+@media(max-width:600px){.chip-qiu{display:none}.brand .x{display:none}.nav .btn{padding:10px 16px;font-size:12px}}
+
+.hero{min-height:100dvh;display:flex;align-items:center;padding:120px 0 70px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 480px at 78% 8%,rgba(216,172,78,.10),transparent 60%),radial-gradient(700px 420px at 8% 90%,rgba(242,194,48,.05),transparent 60%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center;position:relative}
+.hero h1{font-size:clamp(46px,7vw,92px);margin:20px 0 18px}
+.hero .sub{font-size:18px;color:var(--muted);max-width:46ch;margin-bottom:30px}
+.hero .sub b{color:var(--texto)}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{position:relative}
+.card-foto{border:1px solid var(--linea2);border-radius:var(--radius);overflow:hidden;transform:rotate(2.2deg);box-shadow:0 30px 70px rgba(0,0,0,.55);background:var(--panel)}
+.hb-in{padding:46px 38px;background:radial-gradient(130% 120% at 18% 0%,#1B160D,#0C0B09)}
+.hb-mark{font-size:19px;letter-spacing:.1em;color:var(--oro)}
+.hb-mark span{color:var(--muted)}
+.hb-big{font-size:clamp(40px,4.6vw,54px);color:var(--texto);margin:14px 0 4px}
+.hb-big i{font-style:normal;color:var(--amarillo);font-size:.62em;vertical-align:.08em}
+.hb-sub{color:var(--muted);font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.hb-line{height:1px;background:var(--linea2);margin:22px 0 18px}
+.hb-tags{display:flex;gap:10px;flex-wrap:wrap}
+.hb-tags span{border:1px solid var(--linea2);border-radius:999px;padding:6px 12px;font-size:10.5px;font-weight:800;letter-spacing:.12em;color:var(--oro)}
+.float-stat{position:absolute;left:-34px;bottom:34px;background:var(--panel);border:1px solid var(--linea2);border-radius:var(--radius);padding:16px 20px;box-shadow:0 20px 50px rgba(0,0,0,.5);transform:rotate(-2deg)}
+.float-stat .fs-n{font-family:var(--disp);font-size:30px;color:var(--oro);letter-spacing:.02em}
+.float-stat .fs-l{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}.hero-visual{max-width:420px}.float-stat{left:12px}}
+
+.strip{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);background:linear-gradient(180deg,rgba(216,172,78,.04),transparent);scroll-margin-top:88px}
+.strip-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.strip-cell{padding:36px 26px;border-left:1px solid var(--linea)}
+.strip-cell:first-child{border-left:none}
+.strip-cell .sn{font-family:var(--disp);font-size:clamp(30px,3.4vw,44px);color:var(--texto);letter-spacing:.01em}
+.strip-cell .sn i{font-style:normal;color:var(--oro)}
+.strip-cell .sl{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:6px}
+@media(max-width:860px){.strip-grid{grid-template-columns:1fr 1fr}.strip-cell:nth-child(3){border-left:none}}
+
+.diag{padding:110px 0}
+.diag-grid{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
+.diag-rows{margin-top:28px;display:grid;gap:0}
+.diag-row{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--linea);align-items:baseline}
+.diag-row:last-child{border-bottom:1px solid var(--linea)}
+.diag-row .dr-n{font-family:var(--disp);font-size:24px;color:var(--oro);min-width:86px}
+.diag-row .dr-t{color:var(--muted);font-size:14.5px}
+.diag-row .dr-t b{color:var(--texto)}
+.hueco{background:var(--panel);border:1px solid var(--linea2);border-radius:var(--radius);padding:40px;position:relative;overflow:hidden}
+.hueco::after{content:"»»»";position:absolute;right:22px;top:16px;color:rgba(242,194,48,.28);font-weight:900;font-size:20px;letter-spacing:.05em}
+.hueco .h-l{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.hueco .h-big{font-family:var(--disp);font-size:clamp(52px,6vw,76px);margin:8px 0 4px}
+.hueco .h-sub{color:var(--muted);font-size:14.5px;max-width:44ch}
+.hueco .h-year{margin-top:22px;padding-top:20px;border-top:1px solid var(--linea);display:flex;align-items:baseline;gap:12px}
+.hueco .h-year .hy-n{font-family:var(--disp);font-size:30px;color:var(--amarillo)}
+@media(max-width:960px){.diag-grid{grid-template-columns:1fr}}
+
+.metodo{padding:110px 0;background:var(--panel);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.tab-btn{background:transparent;border:1px solid var(--linea2);color:var(--muted);font-family:var(--body);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:12px 20px;cursor:pointer;transition:all .25s}
+.tab-btn:hover{color:var(--oro)}
+.tab-btn.active{background:var(--oro);border-color:var(--oro);color:#14110A}
+.tab-panel{display:none}
+.tab-panel.active{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:start;animation:fadeUp .5s cubic-bezier(.16,1,.3,1)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.tab-panel h3{font-size:26px;margin:10px 0 12px;font-weight:800}
+.tab-panel .tp-copy p{color:var(--muted);margin-bottom:14px}
+.tab-panel .tp-copy b{color:var(--texto)}
+.quote-9{background:var(--negro);border:1px solid var(--linea2);border-radius:var(--radius);padding:22px 24px;margin-top:22px}
+.quote-9 .q-l{font-size:11px;letter-spacing:.2em;color:var(--muted);font-weight:800;text-transform:uppercase}
+.quote-9 .q-t{font-style:italic;font-weight:600;color:var(--oro);font-size:17px;margin-top:8px}
+.seq{display:grid;gap:0;border-left:2px solid var(--linea2);padding-left:0}
+.seq-item{display:flex;gap:18px;padding:13px 0 13px 22px;position:relative}
+.seq-item::before{content:"";position:absolute;left:-6px;top:22px;width:10px;height:10px;border-radius:50%;background:var(--negro);border:2px solid var(--oro)}
+.seq-item .sq-d{min-width:78px;font-weight:900;font-size:12.5px;letter-spacing:.1em;color:var(--amarillo);padding-top:2px}
+.seq-item .sq-t{font-size:14.5px;color:var(--muted)}
+.seq-item .sq-t b{color:var(--texto)}
+.eq{background:var(--negro);border:1px solid var(--linea2);border-radius:var(--radius);padding:34px}
+.eq .eq-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center}
+.eq .eq-frac{display:grid;gap:8px}
+.eq .eq-top,.eq .eq-bot{font-weight:800;font-size:15px;padding:10px 18px;border-radius:10px}
+.eq .eq-top{background:rgba(216,172,78,.12);color:var(--oro)}
+.eq .eq-bot{background:rgba(163,159,148,.1);color:var(--muted)}
+.eq .eq-div{height:2px;background:var(--linea2)}
+.eq .eq-eq{font-family:var(--disp);font-size:34px;color:var(--texto)}
+.eq .eq-res{font-family:var(--disp);font-size:26px;color:var(--amarillo)}
+.eq .eq-note{margin-top:18px;text-align:center;font-size:12.5px;color:var(--muted)}
+.ladder{display:grid;gap:10px}
+.rung{display:flex;align-items:center;gap:16px;background:var(--negro);border:1px solid var(--linea);border-radius:12px;padding:15px 18px;transition:border-color .25s,transform .25s}
+.rung:hover{border-color:var(--linea2);transform:translateX(6px)}
+.rung .r-step{font-family:var(--disp);font-size:17px;color:var(--muted);min-width:30px}
+.rung .r-name{font-weight:800;flex:1}
+.rung .r-name span{display:block;font-weight:600;font-size:12.5px;color:var(--muted)}
+.rung .r-price{font-family:var(--disp);font-size:20px;color:var(--oro);white-space:nowrap}
+.rung.hot{border-color:var(--oro);background:linear-gradient(120deg,rgba(216,172,78,.1),transparent)}
+.mini-cards{display:grid;gap:14px}
+.mini{background:var(--negro);border:1px solid var(--linea);border-radius:12px;padding:20px 22px}
+.mini b{display:block;margin-bottom:6px}
+.mini p{font-size:13.5px;color:var(--muted)}
+@media(max-width:960px){.tab-panel.active{grid-template-columns:1fr}}
+
+.oferta{padding:110px 0;position:relative}
+.oferta::before{content:"";position:absolute;inset:0;background:radial-gradient(760px 400px at 15% 30%,rgba(216,172,78,.07),transparent 60%);pointer-events:none}
+.of-grid{display:grid;grid-template-columns:6fr 5fr;gap:60px;align-items:start;position:relative}
+.stack{background:var(--panel);border:1px solid var(--linea2);border-radius:var(--radius);padding:34px;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.stack .st-l{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:800;margin-bottom:18px}
+.st-item{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:11px 0;border-bottom:1px dashed var(--linea)}
+.st-item .si-n{font-size:15px}
+.st-item .si-n em{font-style:normal;color:var(--amarillo);font-weight:800}
+.st-item .si-v{font-weight:700;color:var(--muted);white-space:nowrap}
+.st-total{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0 6px}
+.st-total .tt{font-weight:900;letter-spacing:.08em;font-size:14px}
+.st-total .tv{font-weight:800;color:var(--muted);text-decoration:line-through;font-size:20px}
+.st-price{display:flex;justify-content:space-between;align-items:center;background:var(--negro);border:1px solid var(--linea2);border-radius:12px;padding:18px 22px;margin-top:12px}
+.st-price .pl{font-weight:900;letter-spacing:.1em;font-size:14px}
+.st-price .pv{font-family:var(--disp);font-size:44px;color:var(--oro);line-height:1}
+.st-mech{margin-top:16px;font-size:13px;color:var(--muted)}
+.st-mech b{color:var(--texto)}
+.principios{display:grid;gap:16px}
+.pr{display:flex;gap:18px;align-items:flex-start;background:var(--panel);border:1px solid var(--linea);border-radius:var(--radius);padding:22px 24px;transition:border-color .25s}
+.pr:hover{border-color:var(--linea2)}
+.pr .p-ic{width:44px;height:44px;flex:none;border-radius:12px;background:rgba(216,172,78,.12);display:grid;place-items:center;color:var(--oro)}
+.pr .p-ic svg{width:22px;height:22px}
+.pr b{display:block;font-size:16px;margin-bottom:4px}
+.pr p{font-size:14px;color:var(--muted)}
+.of-econ{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:960px){.of-grid{grid-template-columns:1fr}}
+
+.ret{padding:110px 0;background:linear-gradient(180deg,rgba(242,194,48,.03),transparent 45%)}
+.ret-grid{display:grid;grid-template-columns:5fr 6fr;gap:60px;align-items:start}
+.ltv{background:var(--panel);border:1px solid var(--linea2);border-radius:var(--radius);padding:26px 30px;margin-top:26px}
+.ltv .l-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px dashed var(--linea)}
+.ltv .l-row:last-child{border-bottom:none}
+.ltv .l-t{font-size:14px;color:var(--muted)}
+.ltv .l-t b{color:var(--texto)}
+.ltv .l-v{font-family:var(--disp);font-size:23px;color:var(--oro);white-space:nowrap}
+.ltv .l-v.big{font-size:29px;color:var(--amarillo)}
+.mecs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+.ret-chips{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:960px){.ret-grid{grid-template-columns:1fr}.mecs{grid-template-columns:1fr}}
+
+.sistema{padding:110px 0;background:var(--panel);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.sys-grid{display:grid;grid-template-columns:7fr 5fr;gap:60px;align-items:start}
+.mods{display:grid;gap:0}
+.mod{display:flex;gap:20px;padding:20px 0;border-top:1px solid var(--linea);align-items:flex-start}
+.mod:last-child{border-bottom:1px solid var(--linea)}
+.mod .m-ic{width:46px;height:46px;flex:none;border-radius:12px;background:rgba(216,172,78,.1);display:grid;place-items:center;color:var(--oro)}
+.mod .m-ic svg{width:22px;height:22px}
+.mod b{display:block;font-size:16.5px;margin-bottom:3px}
+.mod p{font-size:14px;color:var(--muted);max-width:52ch}
+.sys-fotos{display:grid;gap:18px}
+.sf{border:1px solid var(--linea2);border-radius:var(--radius);overflow:hidden;position:relative}
+.sf .sf-cap{position:absolute;left:14px;bottom:12px;background:rgba(12,11,9,.82);border:1px solid var(--linea2);border-radius:999px;padding:6px 14px;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--oro)}
+.sf-card{background:linear-gradient(165deg,#16120B,#0C0B09);padding:40px 30px 58px;min-height:190px}
+.sfc-n{font-size:42px;color:var(--oro)}
+.sfc-l{color:var(--muted);font-size:13.5px;margin-top:8px;max-width:26ch}
+.flow{margin-top:56px;border:1px solid var(--linea2);border-radius:var(--radius);background:var(--negro);padding:30px 26px;overflow-x:auto}
+.flow-track{display:flex;align-items:flex-start;gap:0;min-width:820px}
+.fstep{flex:1;text-align:center;position:relative;padding:0 8px}
+.fstep::after{content:"";position:absolute;top:17px;left:calc(50% + 22px);right:calc(-50% + 22px);height:2px;background:var(--linea2)}
+.fstep:last-child::after{display:none}
+.fstep .f-dot{width:36px;height:36px;margin:0 auto 10px;border-radius:50%;border:2px solid var(--oro);background:var(--panel);display:grid;place-items:center;font-weight:900;font-size:14px;color:var(--oro);position:relative;z-index:1}
+.fstep b{display:block;font-size:13.5px}
+.fstep span{font-size:11.5px;color:var(--muted)}
+.sys-note{margin-top:16px;font-size:13px;color:var(--muted)}
+.sys-note b{color:var(--oro)}
+@media(max-width:960px){.sys-grid{grid-template-columns:1fr}}
+
+.calc{padding:110px 0}
+.calc-panel{background:linear-gradient(160deg,var(--panel) 0%,var(--panel2) 100%);border:1px solid var(--linea2);border-radius:20px;padding:clamp(28px,4vw,52px);box-shadow:0 40px 90px rgba(0,0,0,.45);position:relative;overflow:hidden}
+.calc-panel::before{content:"»»»";position:absolute;right:34px;top:26px;color:rgba(242,194,48,.2);font-weight:900;font-size:26px}
+.calc-grid{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+.ctrl-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.ctrl-label .cl-t{font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.ctrl-label .cl-v{font-family:var(--disp);font-size:34px;color:var(--oro)}
+input[type=range]{width:100%;appearance:none;-webkit-appearance:none;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--oro) var(--fill,45%),rgba(216,172,78,.18) var(--fill,45%));outline:none;margin:6px 0 8px}
+input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--oro-claro);border:3px solid var(--oro);box-shadow:0 4px 14px rgba(0,0,0,.5);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--oro-claro);border:3px solid var(--oro);cursor:pointer}
+.range-marks{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-weight:700;margin-bottom:26px}
+.plan-toggle{display:flex;gap:10px;margin-bottom:8px}
+.pt-btn{flex:1;background:transparent;border:1px solid var(--linea2);color:var(--muted);font-family:var(--body);font-weight:800;font-size:13px;border-radius:12px;padding:13px 10px;cursor:pointer;transition:all .25s;text-align:center}
+.pt-btn small{display:block;font-weight:700;font-size:11px;opacity:.75;margin-top:2px}
+.pt-btn.active{background:rgba(216,172,78,.14);border-color:var(--oro);color:var(--oro)}
+.calc-out{display:grid;gap:14px}
+.co-main{background:var(--negro);border:1px solid var(--linea2);border-radius:var(--radius);padding:26px 28px}
+.co-main .cm-l{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.co-main .cm-v{font-family:var(--disp);font-size:clamp(44px,5vw,64px);color:var(--texto);line-height:1.05;margin-top:4px}
+.co-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.co-cell{background:var(--negro);border:1px solid var(--linea);border-radius:var(--radius);padding:18px 20px}
+.co-cell .cc-l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.co-cell .cc-v{font-family:var(--disp);font-size:27px;margin-top:3px;color:var(--oro)}
+.co-pay{font-size:13.5px;color:var(--muted);padding:4px 6px 0}
+.co-pay b{color:var(--amarillo)}
+@media(max-width:960px){.calc-grid{grid-template-columns:1fr}}
+
+.proj{padding:110px 0;background:var(--panel);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.proj-grid{display:grid;grid-template-columns:6fr 5fr;gap:64px;align-items:end}
+.chart{display:flex;align-items:flex-end;gap:clamp(14px,3vw,34px);height:340px;border-bottom:2px solid var(--linea2);padding:0 8px;margin-bottom:46px}
+.barwrap{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+.bar{width:100%;max-width:96px;border-radius:10px 10px 0 0;background:linear-gradient(180deg,rgba(216,172,78,.85),rgba(216,172,78,.28));transform-origin:bottom;transform:scaleY(0);transition:transform 1s cubic-bezier(.16,1,.3,1)}
+.bar.meta{background:linear-gradient(180deg,var(--oro-claro),var(--oro))}
+.in .bar{transform:scaleY(1)}
+.barwrap .b-v{font-family:var(--disp);font-size:22px;margin-bottom:10px}
+.barwrap .b-l{position:absolute;bottom:-36px;left:0;right:0;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.proj-side p{color:var(--muted);margin-bottom:18px}
+.proj-side p b{color:var(--texto)}
+.palancas{display:grid;gap:10px;margin-top:8px}
+.pal{display:flex;gap:12px;align-items:baseline;font-size:14.5px;color:var(--muted);border-top:1px solid var(--linea);padding-top:12px}
+.pal .chev{color:var(--amarillo);font-weight:900}
+.pal b{color:var(--texto)}
+@media(max-width:960px){.proj-grid{grid-template-columns:1fr}}
+
+.plan{padding:110px 0}
+.tl{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:10px}
+.tl-cell{background:var(--panel);border:1px solid var(--linea);border-radius:var(--radius);padding:24px 22px;position:relative;transition:border-color .25s,transform .25s}
+.tl-cell:hover{border-color:var(--linea2);transform:translateY(-4px)}
+.tl-cell .t-m{font-family:var(--disp);font-size:15px;color:var(--amarillo);letter-spacing:.08em}
+.tl-cell b{display:block;margin:8px 0 6px;font-size:16px}
+.tl-cell p{font-size:13px;color:var(--muted)}
+.tl-cell.gold{border-color:var(--oro);background:linear-gradient(150deg,rgba(216,172,78,.12),var(--panel))}
+.plan-dur{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+@media(max-width:1020px){.tl{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.tl{grid-template-columns:1fr}}
+
+.inv{padding:110px 0;background:var(--panel);border-top:1px solid var(--linea)}
+.inv-top{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.inv-card{background:var(--negro);border:1px solid var(--linea2);border-radius:var(--radius);padding:32px;position:relative}
+.inv-card .ic-l{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);font-weight:800}
+.inv-card .ic-s{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:2px}
+.inv-card .ic-p{display:flex;align-items:baseline;gap:8px;margin:12px 0 6px}
+.inv-card .ic-p .pv{font-family:var(--disp);font-size:46px;color:var(--texto)}
+.inv-card .ic-p .pm{font-weight:700;color:var(--muted)}
+.inv-card .ic-strike{font-size:13px;color:var(--muted)}
+.inv-card .ic-strike s{opacity:.8}
+.inv-card ul{list-style:none;margin-top:18px;display:grid;gap:9px}
+.inv-card li{display:flex;gap:10px;font-size:14px;color:var(--muted)}
+.inv-card li::before{content:"»";color:var(--amarillo);font-weight:900}
+.inv-card .royal{margin-top:16px;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--linea);padding-top:14px}
+.gest{display:grid;grid-template-columns:1fr 1.12fr;gap:20px;margin-bottom:20px}
+.gest .inv-card.featured{border-color:var(--oro);background:linear-gradient(160deg,rgba(216,172,78,.1),var(--negro))}
+.badge-rec{position:absolute;top:-13px;right:22px;background:linear-gradient(120deg,var(--oro),var(--oro-claro));color:#14110A;font-size:11px;font-weight:900;letter-spacing:.14em;border-radius:999px;padding:6px 14px}
+.total-bar{display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between;background:var(--negro);border:1px solid var(--oro);border-radius:var(--radius);padding:26px 32px;margin-bottom:20px}
+.total-bar .tb-l{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.total-bar .tb-v{font-family:var(--disp);font-size:44px;color:var(--oro);line-height:1}
+.total-bar .tb-v span{font-family:var(--body);font-size:15px;font-weight:700;color:var(--muted)}
+.total-bar .tb-claim{font-size:15px;max-width:34ch}
+.total-bar .tb-claim b{color:var(--amarillo)}
+.garantia{display:flex;gap:20px;align-items:center;background:var(--negro);border:1px solid rgba(64,135,186,.45);border-radius:var(--radius);padding:24px 28px}
+.garantia .g-ic{width:52px;height:52px;flex:none;border-radius:14px;background:rgba(64,135,186,.14);display:grid;place-items:center;color:var(--qiu)}
+.garantia .g-ic svg{width:26px;height:26px}
+.garantia b{display:block;margin-bottom:3px;letter-spacing:.04em}
+.garantia p{font-size:14px;color:var(--muted)}
+.inv-notas{margin-top:18px;font-size:12.5px;color:var(--muted)}
+@media(max-width:900px){.inv-top,.gest{grid-template-columns:1fr}}
+
+.faqs{padding:110px 0;background:var(--panel);border-top:1px solid var(--linea)}
+.faq-list{display:grid;gap:12px;max-width:860px}
+details.faq{background:var(--negro);border:1px solid var(--linea);border-radius:var(--radius);overflow:hidden;transition:border-color .25s}
+details.faq[open]{border-color:var(--linea2)}
+details.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-weight:800;font-size:15.5px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"»";color:var(--amarillo);font-weight:900;font-size:18px;transition:transform .3s;flex:none}
+details.faq[open] summary::after{transform:rotate(90deg)}
+details.faq .faq-a{padding:0 24px 22px;font-size:14.5px;color:var(--muted);max-width:72ch}
+details.faq .faq-a b{color:var(--texto)}
+
+.cierre{padding:120px 0 90px;text-align:left;position:relative;overflow:hidden}
+.cierre::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 420px at 50% 110%,rgba(216,172,78,.12),transparent 65%);pointer-events:none}
+.cierre-grid{display:grid;grid-template-columns:6fr 5fr;gap:60px;align-items:center;position:relative}
+.pasos{display:grid;gap:14px;margin:30px 0 34px}
+.paso{display:flex;gap:18px;align-items:flex-start}
+.paso .p-n{font-family:var(--disp);font-size:26px;color:var(--oro);min-width:36px;border:1px solid var(--linea2);border-radius:12px;text-align:center;padding:4px 0}
+.paso b{display:block;font-size:16.5px}
+.paso p{font-size:14px;color:var(--muted)}
+.urgencia{background:var(--panel);border:1px solid var(--linea2);border-radius:var(--radius);padding:26px 28px}
+.urgencia .u-t{font-weight:800;color:var(--amarillo);letter-spacing:.04em;margin-bottom:6px}
+.urgencia p{font-size:14.5px;color:var(--muted)}
+.urgencia .u-val{margin-top:14px;padding-top:14px;border-top:1px dashed var(--linea);font-size:12.5px;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.cierre-logo{border:1px solid var(--linea2);border-radius:var(--radius);overflow:hidden;transform:rotate(-2deg);box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.cl-brand{background:radial-gradient(110% 100% at 50% 0%,#191307,#0C0B09);padding:64px 40px;text-align:center}
+.clb{font-size:60px;line-height:1.04;color:var(--texto)}
+.clb-sub{margin-top:16px;color:var(--muted);letter-spacing:.22em;font-size:11px;text-transform:uppercase;font-weight:700}
+@media(max-width:960px){.cierre-grid{grid-template-columns:1fr}.cierre-logo{max-width:360px}}
+
+footer{border-top:1px solid var(--linea);padding:34px 0 44px}
+.foot{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.foot .f-qiu{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.18em;font-size:12px;color:var(--qiu)}
+.foot .f-qiu .qiu-mono{width:26px;height:26px;border-radius:7px;font-size:11px}
+.foot .f-txt{font-size:12.5px;color:var(--muted)}
+
+.tour-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--oro);color:var(--oro);border-radius:999px;padding:13px 20px;font-family:var(--body);font-weight:800;font-size:13px;letter-spacing:.06em;cursor:pointer;box-shadow:0 14px 40px rgba(0,0,0,.5);transition:transform .25s,background .25s}
+.tour-fab:hover{transform:translateY(-2px);background:rgba(216,172,78,.1)}
+.tour-fab.hide{display:none}
+.tour-card{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);z-index:70;width:min(480px,calc(100vw - 28px));background:var(--panel);border:1px solid var(--oro);border-radius:16px;padding:22px 24px;box-shadow:0 30px 80px rgba(0,0,0,.65);opacity:0;pointer-events:none;transition:opacity .35s,transform .35s}
+.tour-card.on{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+.tour-card .tc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.tour-card .tc-step{font-size:11px;font-weight:900;letter-spacing:.18em;color:var(--amarillo)}
+.tour-card .tc-x{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;padding:2px 8px}
+.tour-card .tc-x:hover{color:var(--texto)}
+.tour-card b{display:block;font-size:17px;margin-bottom:5px}
+.tour-card p{font-size:13.5px;color:var(--muted)}
+.tour-card .tc-btns{display:flex;gap:10px;margin-top:16px}
+.tour-card .tc-btn{flex:1;border-radius:999px;padding:11px 14px;font-family:var(--body);font-weight:800;font-size:13px;cursor:pointer;border:1px solid var(--linea2);background:transparent;color:var(--oro);transition:all .25s}
+.tour-card .tc-btn:hover{background:rgba(216,172,78,.1)}
+.tour-card .tc-btn.next{background:linear-gradient(120deg,var(--oro),var(--oro-claro));color:#14110A;border-color:transparent}
+.tour-card .tc-btn:disabled{opacity:.35;cursor:default}
+.tour-hl{outline:2px solid var(--oro);outline-offset:8px;border-radius:16px}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .bar{transform:scaleY(1);transition:none}
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<header id="topbar">
+  <div class="wrap nav">
+    <div class="brand">
+      <span class="lg display skew">LION<b>&nbsp;GYM</b></span>
+      <span class="x">×</span>
+      <span class="chip-qiu"><span class="qiu-mono">Qiu</span>QIU AGENCY</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#metodo">Método</a>
+      <a href="#oferta">Reto León</a>
+      <a href="#retencion">Retención</a>
+      <a href="#sistema">Sistema</a>
+      <a href="#calculadora">ROI</a>
+      <a href="#inversion">Inversión</a>
+    </nav>
+    <a class="btn btn-oro" href="#inversion">Empezar <span class="chev">»»»</span></a>
+  </div>
+</header>
+<div id="nav-sentinel" style="position:absolute;top:80px;height:1px;width:1px"></div>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow reveal"><span class="chev">»»»</span> Propuesta comercial · Julio 2026 · Lechería, Anzoátegui</div>
+      <h1 class="display reveal d1"><span class="skew">DE 645 A <span class="gold-grad">800</span><br>MIEMBROS.</span></h1>
+      <p class="sub reveal d2">Un sistema comercial estilo <b>Gym Launch</b> que reactiva a tus <b>300 inactivos</b>, <b>retiene a los nuevos</b> y convierte cada contacto en membresía.</p>
+      <div class="hero-ctas reveal d3">
+        <a class="btn btn-oro" href="#calculadora">Calcular mi retorno <span class="chev">»»»</span></a>
+        <a class="btn btn-ghost" href="#" id="tour-start">▶ Recorrido guiado · 2 min</a>
+      </div>
+      <div class="hero-meta reveal d4">
+        <span class="tag">Ticket real: $65/mes</span>
+        <span class="tag">Meta: 90 días</span>
+        <span class="tag">Garantía Qiu 30 días</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <!-- Opcional: sustituir este panel por la foto del cartel del gym: <img src="img/poster.jpg" alt="Lion Gym"> dentro de .card-foto -->
+      <div class="card-foto">
+        <div class="hb-in">
+          <div class="hb-mark display skew">LION<span> GYM</span></div>
+          <div class="hb-big display"><span class="skew num">645 <i>»»»</i> 800</span></div>
+          <div class="hb-sub">Recupera · Retiene · Asciende</div>
+          <div class="hb-line"></div>
+          <div class="hb-tags"><span>RETO LEÓN</span><span>50 CUPOS</span><span>90 DÍAS</span></div>
+        </div>
+      </div>
+      <div class="float-stat">
+        <div class="fs-n num">$19.500<span style="font-size:15px;color:var(--muted)">/mes</span></div>
+        <div class="fs-l">dormidos en 300 inactivos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap strip-grid">
+    <div class="strip-cell reveal"><div class="sn num" data-count="645">0</div><div class="sl">Miembros activos hoy</div></div>
+    <div class="strip-cell reveal d1"><div class="sn num" data-count="300"><i>0</i></div><div class="sl">Inactivos recuperables</div></div>
+    <div class="strip-cell reveal d2"><div class="sn num" data-count="41925" data-prefix="$">$0</div><div class="sl">Facturación mensual actual</div></div>
+    <div class="strip-cell reveal d3"><div class="sn num" data-count="52000" data-prefix="$"><i>$0</i></div><div class="sl">Facturación en la meta de 800</div></div>
+  </div>
+</div>
+
+<section class="diag" id="diagnostico">
+  <div class="wrap diag-grid">
+    <div>
+      <div class="eyebrow reveal"><span class="chev">»»»</span> Diagnóstico</div>
+      <h2 class="display reveal d1" style="font-size:clamp(30px,4vw,44px);margin:14px 0 14px"><span class="skew">La oportunidad ya está en tu base de datos</span></h2>
+      <p class="reveal d2" style="color:var(--muted)">Para llegar a 800, Lion Gym necesita <b style="color:var(--texto)">155 miembros más</b>. Recuperar solo la mitad de los 300 inactivos cumple la meta completa, sin gastar un dólar persiguiendo desconocidos.</p>
+      <div class="diag-rows reveal d3">
+        <div class="diag-row"><div class="dr-n">155</div><div class="dr-t"><b>Miembros que faltan</b> para la meta de 800</div></div>
+        <div class="diag-row"><div class="dr-n">52%</div><div class="dr-t"><b>De los inactivos</b> alcanza para cerrar la brecha entera</div></div>
+        <div class="diag-row"><div class="dr-n">0</div><div class="dr-t"><b>Seguimiento sistemático</b> les está llegando hoy</div></div>
+      </div>
+    </div>
+    <div class="hueco reveal d2">
+      <div class="h-l">Dinero dormido cada mes</div>
+      <div class="h-big display"><span class="skew gold-grad num">$19.500</span></div>
+      <p class="h-sub">300 ex-miembros × $65 de mensualidad. Gente que ya conoce el gimnasio, ya confió una vez y nadie ha vuelto a hablarle uno a uno.</p>
+      <div class="h-year"><span class="hy-n num">$234.000</span><span class="note">al año, si nadie los toca</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="metodo" id="metodo">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="chev">»»»</span> El método · nivel Gym Launch</div>
+      <h2 class="display reveal d1"><span class="skew">Cuatro motores, un solo sistema</span></h2>
+      <p class="reveal d2">La misma ingeniería con la que Alex Hormozi escaló cientos de gimnasios: base de datos primero, oferta irresistible después, ascenso de valor siempre.</p>
+    </div>
+    <div class="tabs reveal" role="tablist">
+      <button class="tab-btn active" data-tab="t1" role="tab" aria-selected="true">01 · Reactivación</button>
+      <button class="tab-btn" data-tab="t2" role="tab" aria-selected="false">02 · Oferta irresistible</button>
+      <button class="tab-btn" data-tab="t3" role="tab" aria-selected="false">03 · Escalera de ascenso</button>
+      <button class="tab-btn" data-tab="t4" role="tab" aria-selected="false">04 · Adquisición local</button>
+    </div>
+
+    <div class="tab-panel active" id="t1" role="tabpanel">
+      <div class="tp-copy">
+        <h3>Los 300 primero. Siempre.</h3>
+        <p>Tus inactivos no dijeron que no: <b>nadie volvió a hablarles</b>. La campaña de base de datos es la jugada de apertura de Hormozi porque es la venta más barata y más rápida que existe.</p>
+        <p>Secuencia multicanal de 30 días por WhatsApp, email y llamada, segmentada por tiempo de inactividad, escrita para sonar humana y detenerse sola cuando alguien responde.</p>
+        <div class="quote-9">
+          <div class="q-l">El mensaje de 9 palabras</div>
+          <div class="q-t">"Hola María, ¿todavía quieres lograr tu meta de este año?"</div>
+        </div>
+      </div>
+      <div class="seq">
+        <div class="seq-item"><div class="sq-d">DÍA 1</div><div class="sq-t"><b>WhatsApp personal:</b> el mensaje de 9 palabras</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 3</div><div class="sq-t"><b>Email:</b> la historia real de alguien que volvió</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 5</div><div class="sq-t"><b>WhatsApp con video:</b> cómo está Lion Gym hoy</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 7</div><div class="sq-t"><b>Llamada breve</b> del equipo, con guion incluido</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 10</div><div class="sq-t"><b>Se abre el Reto León:</b> 50 cupos, contador en vivo</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 14</div><div class="sq-t"><b>Último aviso:</b> cierre de inscripciones</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 30+</div><div class="sq-t"><b>Largo plazo:</b> tips, retos y novedades del gym</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t2" role="tabpanel">
+      <div class="tp-copy">
+        <h3>La ecuación de valor de $100M Offers</h3>
+        <p>Una oferta gana cuando el <b>resultado soñado</b> y la <b>certeza de lograrlo</b> pesan más que el tiempo y el esfuerzo que exige. El Reto León está diseñado pieza por pieza sobre esa fórmula.</p>
+        <p>Por eso lleva garantía de resultados, cupos limitados verificables y un premio al que termina: <b>el precio nunca compite por ser barato, compite por ser obvio.</b></p>
+      </div>
+      <div class="eq">
+        <div class="eq-row">
+          <div class="eq-frac">
+            <div class="eq-top">Resultado soñado × Certeza de lograrlo</div>
+            <div class="eq-div"></div>
+            <div class="eq-bot">Tiempo de espera × Esfuerzo y sacrificio</div>
+          </div>
+          <div class="eq-eq">=</div>
+          <div class="eq-res"><span class="skew">VALOR</span></div>
+        </div>
+        <div class="eq-note">Transformación visible en 6 semanas + garantía total arriba · plan guiado y acompañamiento abajo. La fracción se dispara.</div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t3" role="tabpanel">
+      <div class="tp-copy">
+        <h3>Nadie se queda en el primer escalón</h3>
+        <p>El Reto no es el negocio: es la puerta. Cada peldaño <b>sube el compromiso y el ticket</b>, y el sistema empuja el ascenso con seguimiento automático al terminar cada etapa.</p>
+        <p>Así se protege la mensualidad de $65 sin descuentos que devalúen la marca: <b>se agrega valor, no se recorta precio.</b></p>
+        <p class="note">Precios de los peldaños sugeridos, a validar con la dirección de Lion Gym.</p>
+      </div>
+      <div class="ladder">
+        <div class="rung"><div class="r-step">0</div><div class="r-name">Evaluación física gratis<span>Imán de entrada, cero fricción</span></div><div class="r-price num">$0</div></div>
+        <div class="rung hot"><div class="r-step">1</div><div class="r-name">Reto León 6 Semanas<span>La oferta insignia, 50 cupos</span></div><div class="r-price num">$147</div></div>
+        <div class="rung"><div class="r-step">2</div><div class="r-name">Membresía mensual<span>El núcleo del negocio</span></div><div class="r-price num">$65/mes</div></div>
+        <div class="rung"><div class="r-step">3</div><div class="r-name">Plan semestral<span>Ahorra $39 pagando por adelantado</span></div><div class="r-price num">$351</div></div>
+        <div class="rung"><div class="r-step">4</div><div class="r-name">Plan anual<span>Paga 9 meses, entrena 12</span></div><div class="r-price num">$585</div></div>
+        <div class="rung"><div class="r-step">5</div><div class="r-name">Élite Lion · PT 1 a 1<span>Alto ticket: entrenador + nutrición</span></div><div class="r-price num">$199/mes</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="t4" role="tabpanel">
+      <div class="tp-copy">
+        <h3>Lechería es el territorio</h3>
+        <p>Cuando la base interna esté rugiendo, se enciende la captación externa: <b>publicidad hiperlocal</b> a minutos del gimnasio, referidos con incentivo real y prueba social en video.</p>
+        <p>Cada palanca alimenta a las otras: las reseñas traen visitas, las visitas entran al Reto, el Reto produce transformaciones y las transformaciones producen más anuncios.</p>
+      </div>
+      <div class="mini-cards">
+        <div class="mini"><b>Anuncios hiperlocales</b><p>Meta Ads en un radio de 3 a 5 km alrededor de Lion Gym, con la oferta del Reto como gancho. Presupuesto de pauta aparte y opcional.</p></div>
+        <div class="mini"><b>Trae tu manada</b><p>Programa de referidos: cada participante del Reto invita a un amigo y ambos reciben beneficio. El sistema lo pide y lo registra solo.</p></div>
+        <div class="mini"><b>Prueba social en video</b><p>Antes y después reales de cada edición, grabados con permiso. El motor de contenido que ningún competidor puede copiar.</p></div>
+        <div class="mini"><b>Reseñas 5 estrellas</b><p>Pedido automático de reseña en Google tras cada logro. Más reseñas, más visibilidad orgánica local, más visitas frías.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="oferta" id="oferta">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="chev">»»»</span> La oferta insignia</div>
+      <h2 class="display reveal d1"><span class="skew">Reto León <span class="gold-grad">6 semanas</span></span></h2>
+      <p class="reveal d2">La promoción que abre la reactivación y alimenta la escalera. Construida con las tres palancas de Hormozi: garantía, urgencia y escasez.</p>
+    </div>
+    <div class="of-grid">
+      <div class="stack reveal">
+        <div class="st-l">Lo que recibe el participante</div>
+        <div class="st-item"><div class="si-n">6 semanas de acceso total al gym</div><div class="si-v num">$97</div></div>
+        <div class="st-item"><div class="si-n">Plan de entrenamiento Lion personalizado</div><div class="si-v num">$85</div></div>
+        <div class="st-item"><div class="si-n">Evaluación física inicial y final con métricas</div><div class="si-v num">$60</div></div>
+        <div class="st-item"><div class="si-n">Grupo VIP de accountability por WhatsApp</div><div class="si-v num">$45</div></div>
+        <div class="st-item"><div class="si-n">Guía de nutrición Lion</div><div class="si-v num">$40</div></div>
+        <div class="st-item"><div class="si-n">Reto semanal con premios</div><div class="si-v num">$35</div></div>
+        <div class="st-item"><div class="si-n"><em>BONO:</em> 1 sesión con entrenador personal</div><div class="si-v num">$60</div></div>
+        <div class="st-item"><div class="si-n"><em>BONO:</em> Franela oficial del Reto León</div><div class="si-v num">$25</div></div>
+        <div class="st-item"><div class="si-n"><em>BONO:</em> 1 semana comodín de congelación</div><div class="si-v num">$50</div></div>
+        <div class="st-total"><div class="tt">VALOR TOTAL</div><div class="tv num">$497</div></div>
+        <div class="st-price"><div class="pl">PRECIO DEL RETO</div><div class="pv num" id="reto-precio">$147</div></div>
+        <p class="st-mech"><b>Mecánica de depósito:</b> quien completa el reto convierte sus $147 en crédito para el plan semestral o anual. El compromiso se premia, no se regala.</p>
+      </div>
+      <div>
+        <div class="principios">
+          <div class="pr reveal"><div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><b>Garantía total de resultados</b><p>Completa el reto y, si no ves resultados medibles, devolución del 100%. El riesgo lo asume el gimnasio, no el cliente.</p></div></div>
+          <div class="pr reveal d1"><div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><b>Urgencia real</b><p>Solo 2 ediciones al año con fecha de cierre pública. El que lo piensa demasiado se queda por fuera.</p></div></div>
+          <div class="pr reveal d2"><div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div><b>Escasez verificable</b><p>50 cupos por edición y contador de cupos restantes visible en la página de inscripción. Nada de escasez inventada.</p></div></div>
+          <div class="pr reveal d3"><div class="p-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><div><b>Motor de membresías</b><p>Al terminar, el reto asciende al participante a la membresía. Así se llega a 800 y, sobre todo, así se quedan.</p></div></div>
+        </div>
+        <div class="of-econ reveal d4">
+          <span class="tag num">50 cupos × $147 = $7.350 por edición</span>
+          <span class="tag num">2 ediciones = $14.700/año extra</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ret" id="retencion">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="chev">»»»</span> El segundo frente · Retención</div>
+      <h2 class="display reveal d1"><span class="skew">El que entra, <span class="gold-grad">se queda</span></span></h2>
+      <p class="reveal d2">Recuperar 300 no sirve si se escapan por la puerta de atrás. El patrón clásico del fitness: entran motivados y al día 30 dejan de venir. Este sistema lo ataca desde el día 1.</p>
+    </div>
+    <div class="ret-grid">
+      <div>
+        <p class="reveal" style="color:var(--muted)">La mayoría de los gimnasios pierde a sus miembros nuevos en el primer mes: <b style="color:var(--texto)">el hábito se rompe antes de que aparezcan los resultados</b>. Cada miembro que se va temprano costó captarlo y se fue gratis. La retención convierte cada dólar de captación en dos.</p>
+        <div class="ltv reveal d1">
+          <div class="l-row"><div class="l-t">Cada mes extra de vida de un miembro</div><div class="l-v num">$65</div></div>
+          <div class="l-row"><div class="l-t">Duplicar la permanencia: <b>de 3 a 6 meses</b></div><div class="l-v num">$195 » $390</div></div>
+          <div class="l-row"><div class="l-t">Retener <b>40 miembros/mes</b> que se iban</div><div class="l-v big num">$2.600/mes</div></div>
+        </div>
+        <div class="ret-chips reveal d2">
+          <span class="tag">Meta: +2 meses de vida promedio</span>
+          <span class="tag">Sin un solo lead nuevo</span>
+        </div>
+      </div>
+      <div class="seq reveal d1" id="ret-seq">
+        <div class="seq-item"><div class="sq-d">DÍA 1</div><div class="sq-t"><b>Bienvenida Lion:</b> meta escrita, foto y medición inicial</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 3</div><div class="sq-t"><b>Check-in:</b> ¿cómo fue el arranque? (automático)</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 7</div><div class="sq-t"><b>Primer hito:</b> 3 visitas = primera insignia + mensaje del coach</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 14</div><div class="sq-t"><b>Rutina de la semana</b> + invitación al mini-reto del mes</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 21</div><div class="sq-t"><b>Radar:</b> encuesta rápida; riesgo detectado = alerta al equipo</div></div>
+        <div class="seq-item"><div class="sq-d">DÍA 30</div><div class="sq-t"><b>Medalla del primer mes</b> + pedido de reseña en el pico de motivación</div></div>
+        <div class="seq-item"><div class="sq-d">+7 DÍAS</div><div class="sq-t"><b>Alerta de inasistencia:</b> una semana sin venir dispara el "te extrañamos"</div></div>
+        <div class="seq-item"><div class="sq-d">+12 DÍAS</div><div class="sq-t"><b>Llamada de rescate</b> del equipo antes de que cancele</div></div>
+      </div>
+    </div>
+    <div class="mecs">
+      <div class="mini reveal"><b>Alerta de inasistencia</b><p>El sistema detecta 7 días sin visita y actúa solo, antes de que el miembro se enfríe. A los 12 días, tu equipo recibe la tarea de llamar.</p></div>
+      <div class="mini reveal d1"><b>Hitos y medallas</b><p>Las medallas que ya cuelgan en tu recepción, ahora automáticas y digitales: cada logro se celebra, se comparte y pide su reseña.</p></div>
+      <div class="mini reveal d2"><b>Mini-retos mensuales</b><p>Comunidad activa entre ediciones del Reto León. El hábito se sostiene en grupo, no en fuerza de voluntad individual.</p></div>
+      <div class="mini reveal d3"><b>Rescate antes de cancelar</b><p>Quien pide la baja recibe una oferta de pausa o una sesión con coach, no un adiós. Muchos solo necesitan un empujón.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sistema" id="sistema">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="chev">»»»</span> La tecnología · powered by Qiu</div>
+      <h2 class="display reveal d1"><span class="skew">Lion Growth System™</span></h2>
+      <p class="reveal d2">La plataforma comercial propia de Lion Gym, operada por Qiu Agency. Todo el seguimiento, en un solo lugar, trabajando de día y de noche.</p>
+    </div>
+    <div class="sys-grid">
+      <div class="mods reveal">
+        <div class="mod"><div class="m-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><b>CRM centralizado</b><p>Los 945 contactos, activos e inactivos, organizados, etiquetados y segmentados por comportamiento.</p></div></div>
+        <div class="mod"><div class="m-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><div><b>Mensajería automatizada</b><p>Secuencias de WhatsApp, SMS y email que hacen el seguimiento solas, con tono humano, 24/7.</p></div></div>
+        <div class="mod"><div class="m-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><b>Agenda inteligente</b><p>Evaluaciones y clases de prueba se agendan solas, con recordatorios que rescatan a los que no llegan.</p></div></div>
+        <div class="mod"><div class="m-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><div><b>Embudo del Reto León</b><p>Página de inscripción con contador de cupos en vivo, pago en línea y confirmación automática.</p></div></div>
+        <div class="mod"><div class="m-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><b>Reputación 5 estrellas</b><p>Pedido automático de reseña en Google después de cada logro. La vitrina local crece sola.</p></div></div>
+        <div class="mod"><div class="m-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><b>Panel de resultados</b><p>Leads, reactivados e ingresos visibles en tiempo real. La dirección mira números, no persigue reportes.</p></div></div>
+      </div>
+      <div class="sys-fotos">
+        <!-- Opcional: sustituir estas tarjetas por fotos reales del gym: <div class="sf"><img src="img/recepcion.jpg" alt=""><span class="sf-cap">Recepción · check-in</span></div> -->
+        <div class="sf sf-card reveal"><div><div class="sfc-n display num">&lt; 5 min</div><div class="sfc-l">tiempo de respuesta, a cualquier hora del día</div></div><span class="sf-cap">La regla de oro</span></div>
+        <div class="sf sf-card reveal d1"><div><div class="sfc-n display num">945</div><div class="sfc-l">contactos trabajando dentro del sistema</div></div><span class="sf-cap">Tu base, ordenada</span></div>
+      </div>
+    </div>
+    <div class="flow reveal">
+      <div class="flow-track">
+        <div class="fstep"><div class="f-dot">1</div><b>Contacto entra</b><span>WhatsApp, IG o landing</span></div>
+        <div class="fstep"><div class="f-dot">2</div><b>Respuesta &lt; 5 min</b><span>Incluso a las 11 pm</span></div>
+        <div class="fstep"><div class="f-dot">3</div><b>Cita agendada</b><span>El sistema confirma solo</span></div>
+        <div class="fstep"><div class="f-dot">4</div><b>Recordatorios</b><span>Menos ausencias</span></div>
+        <div class="fstep"><div class="f-dot">5</div><b>Visita y cierre</b><span>El equipo recibe la ficha</span></div>
+        <div class="fstep"><div class="f-dot">6</div><b>Miembro fiel</b><span>Reseña + referido</span></div>
+      </div>
+    </div>
+    <p class="sys-note reveal">Plataforma incluida dentro de tu plan mensual y operada por <b>Qiu Agency</b>. Sin licencias externas ni herramientas sueltas que pagar aparte.</p>
+  </div>
+</section>
+
+<section class="calc" id="calculadora">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="chev">»»»</span> Calculadora interactiva</div>
+      <h2 class="display reveal d1"><span class="skew">Mueve la palanca. Mira el retorno.</span></h2>
+      <p class="reveal d2">Con el ticket real de $65, cada miembro recuperado se siente en la caja. Ajusta el escenario tú mismo.</p>
+    </div>
+    <div class="calc-panel reveal">
+      <div class="calc-grid">
+        <div>
+          <div class="ctrl-label"><span class="cl-t">Miembros recuperados</span><span class="cl-v num" id="c-n">90</span></div>
+          <input type="range" id="c-range" min="30" max="155" value="90" step="5" aria-label="Miembros recuperados">
+          <div class="range-marks"><span>30 · tímido</span><span>90 · conservador</span><span>155 · meta total</span></div>
+          <div class="ctrl-label" style="margin-bottom:10px"><span class="cl-t">Plan de gestión</span></div>
+          <div class="plan-toggle" role="radiogroup" aria-label="Plan de gestión">
+            <button class="pt-btn" data-plan="497" role="radio" aria-checked="false">CRECIMIENTO<small>$497/mes · todo incluido</small></button>
+            <button class="pt-btn active" data-plan="747" role="radio" aria-checked="true">ÉLITE HORMOZI<small>$747/mes · todo incluido</small></button>
+          </div>
+          <p class="note">Todo incluido: gestión + plataforma Lion Growth System™ + mensajería. El cálculo del primer año suma la implementación única de $750.</p>
+        </div>
+        <div class="calc-out">
+          <div class="co-main"><div class="cm-l">Ingreso extra por mes</div><div class="cm-v num gold-grad" id="c-mes">$5.850</div></div>
+          <div class="co-row">
+            <div class="co-cell"><div class="cc-l">Ingreso extra al año</div><div class="cc-v num" id="c-ano">$70.200</div></div>
+            <div class="co-cell"><div class="cc-l">Retorno año 1</div><div class="cc-v num" id="c-roi">7,2×</div></div>
+          </div>
+          <p class="co-pay">El plan completo se paga con <b class="num" id="c-pay">12 miembros</b>. El sistema va por <span class="num" id="c-goal">90</span>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proj">
+  <div class="wrap proj-grid">
+    <div>
+      <div class="eyebrow reveal" style="margin-bottom:26px"><span class="chev">»»»</span> Proyección a 90 días</div>
+      <div class="chart reveal" id="chart">
+        <div class="barwrap"><div class="b-v num">645</div><div class="bar" style="height:52%"></div><div class="b-l">Hoy</div></div>
+        <div class="barwrap"><div class="b-v num">685</div><div class="bar" style="height:64%"></div><div class="b-l">Mes 1</div></div>
+        <div class="barwrap"><div class="b-v num">740</div><div class="bar" style="height:80%"></div><div class="b-l">Mes 2</div></div>
+        <div class="barwrap"><div class="b-v num gold-grad">800</div><div class="bar meta" style="height:97%"></div><div class="b-l">Mes 3 · Meta</div></div>
+      </div>
+    </div>
+    <div class="proj-side">
+      <h2 class="display reveal" style="font-size:clamp(28px,3.6vw,40px);margin-bottom:16px"><span class="skew">Cómo se cierra la brecha</span></h2>
+      <p class="reveal d1">La reactivación abre el camino y las demás palancas lo rematan. Escenario ilustrativo, calibrado en el kickoff con los datos reales de caja.</p>
+      <div class="palancas reveal d2">
+        <div class="pal"><span class="chev">»»»</span><span><b>Reactivación:</b> 90 a 120 recuperados de la base</span></div>
+        <div class="pal"><span class="chev">»»»</span><span><b>Reto León:</b> 2 ediciones × 50 cupos que ascienden a membresía</span></div>
+        <div class="pal"><span class="chev">»»»</span><span><b>Retención:</b> los nuevos ya no se van a los 30 días</span></div>
+        <div class="pal"><span class="chev">»»»</span><span><b>Referidos, reseñas y pauta hiperlocal:</b> el acelerador</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plan" id="plan">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="chev">»»»</span> Alcance y duración</div>
+      <h2 class="display reveal d1"><span class="skew">Seis meses. Un antes y un después.</span></h2>
+      <p class="reveal d2">Compromiso inicial de 6 meses de gestión: suficiente para dos ediciones del Reto y una máquina que ya no se apaga.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-cell reveal"><div class="t-m">MES 1</div><b>Implementación y lanzamiento</b><p>Sistema configurado, 945 contactos migrados y la secuencia de reactivación disparada en la semana 3.</p></div>
+      <div class="tl-cell reveal d1"><div class="t-m">MES 2</div><b>Reto León · Edición 1</b><p>50 cupos, contador en vivo y las primeras transformaciones documentadas en video.</p></div>
+      <div class="tl-cell gold reveal d2"><div class="t-m">MES 3</div><b>Meta: 800 miembros</b><p>Reactivados + ascensos del Reto cierran la brecha. Revisión de números con la dirección.</p></div>
+      <div class="tl-cell reveal d3"><div class="t-m">MES 4–5</div><b>Escala local</b><p>Pauta hiperlocal, referidos y reseñas encendidos. La captación fría entra al embudo probado.</p></div>
+      <div class="tl-cell reveal d4"><div class="t-m">MES 6</div><b>Reto Edición 2 y consolidación</b><p>Segunda cosecha, playbook documentado y sistema en piloto automático. Renovación o modo Sistema Activo.</p></div>
+    </div>
+    <div class="plan-dur reveal">
+      <span class="tag">Gestión: contrato inicial 6 meses</span>
+      <span class="tag">Plataforma incluida en la mensualidad</span>
+      <span class="tag">Primeros mensajes: día 14 a 21</span>
+    </div>
+  </div>
+</section>
+
+<section class="inv" id="inversion">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="chev">»»»</span> Inversión</div>
+      <h2 class="display reveal d1"><span class="skew">Precio claro. Sin sorpresas.</span></h2>
+      <p class="reveal d2">Una implementación única y una sola mensualidad que lo cubre todo. En dólares, por escrito.</p>
+    </div>
+
+    <div class="inv-top">
+      <div class="inv-card reveal">
+        <div class="ic-l">Implementación</div>
+        <div class="ic-s">Pago único · semanas 1 y 2</div>
+        <div class="ic-p"><span class="pv num">$750</span></div>
+        <div class="ic-strike">Valor de mercado: <s class="num">$2.400</s></div>
+        <ul>
+          <li>Lion Growth System™ configurado de cero</li>
+          <li>Migración y limpieza de 945 contactos</li>
+          <li>Reto León diseñado: oferta, precios y materiales</li>
+          <li>Embudo de inscripción con contador de cupos</li>
+          <li>Secuencias de reactivación y retención cargadas</li>
+          <li>Capacitación del equipo de recepción</li>
+        </ul>
+      </div>
+      <div class="inv-card reveal d1">
+        <div class="ic-l">Tu mensualidad, sin sorpresas</div>
+        <div class="ic-s">Una sola factura cubre todo</div>
+        <div class="ic-p"><span class="pv num" style="font-size:29px;line-height:1.25">Todo incluido</span></div>
+        <div class="ic-strike">Reemplaza 6+ herramientas sueltas</div>
+        <ul>
+          <li>Plataforma Lion Growth System™: CRM, embudos y panel</li>
+          <li>Mensajería WhatsApp, SMS y email del sistema</li>
+          <li>Secuencias de reactivación y retención operando</li>
+          <li>Hosting, actualizaciones y soporte permanente</li>
+          <li>Datos y contactos siempre propiedad de Lion Gym</li>
+        </ul>
+        <div class="royal">Cero licencias aparte, cero herramientas sueltas: la máquina completa vive dentro del plan.</div>
+      </div>
+    </div>
+
+    <div class="gest">
+      <div class="inv-card reveal">
+        <div class="ic-l">Plan Crecimiento</div>
+        <div class="ic-s">Gestión mensual · mínimo 6 meses</div>
+        <div class="ic-p"><span class="pv num">$497</span><span class="pm">/mes</span></div>
+        <ul>
+          <li>Plataforma Lion Growth System™ incluida</li>
+          <li>Secuencias de reactivación operando y optimizadas</li>
+          <li>Sistema de retención y alertas de inasistencia</li>
+          <li>1 edición del Reto León operada por semestre</li>
+          <li>2 campañas promocionales al mes</li>
+          <li>Reporte mensual + soporte por WhatsApp</li>
+        </ul>
+      </div>
+      <div class="inv-card featured reveal d1">
+        <div class="badge-rec">RECOMENDADO</div>
+        <div class="ic-l">Plan Élite Hormozi</div>
+        <div class="ic-s">Gestión mensual · mínimo 6 meses</div>
+        <div class="ic-p"><span class="pv num">$747</span><span class="pm">/mes</span></div>
+        <ul>
+          <li>Todo lo del Plan Crecimiento</li>
+          <li>2 ediciones del Reto León al año, llave en mano</li>
+          <li>Gestión de pauta hiperlocal en Meta y Google*</li>
+          <li>8 contenidos al mes + videos de prueba social</li>
+          <li>Programa de referidos "Trae tu manada"</li>
+          <li>Reunión estratégica quincenal con la dirección</li>
+        </ul>
+        <div class="royal">*No incluye el presupuesto de pauta publicitaria.</div>
+      </div>
+    </div>
+
+    <div class="total-bar reveal">
+      <div><div class="tb-l">Élite todo incluido</div><div class="tb-v num">$747 <span>/mes · plataforma + gestión</span></div></div>
+      <div class="tb-claim">Se paga con <b>12 miembros</b> de $65. El sistema va por <b>155</b>.</div>
+      <a class="btn btn-oro" href="#cierre">Elegir plan <span class="chev">»»»</span></a>
+    </div>
+
+    <div class="garantia reveal">
+      <div class="g-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+      <div><b>GARANTÍA QIU DE 30 DÍAS</b><p>Si en el primer mes el sistema no está funcionando y generando los primeros clientes reactivados, devolvemos tu inversión. Sin letra pequeña.</p></div>
+    </div>
+    <p class="inv-notas reveal">Implementación: pago único al aprobar. Gestión: compromiso inicial de 6 meses con plataforma incluida; al finalizar, renovación mensual o modo <b style="color:var(--oro)">Sistema Activo desde $247/mes</b> para mantener secuencias, alertas de retención y soporte funcionando. Precios en USD.</p>
+  </div>
+</section>
+
+<section class="faqs" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="chev">»»»</span> Preguntas directas</div>
+      <h2 class="display reveal d1"><span class="skew">Lo que todo dueño pregunta</span></h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq"><summary>¿Esto reemplaza a mi equipo de recepción?</summary><div class="faq-a">No: <b>les quita el trabajo repetitivo</b>. El sistema persigue, recuerda y hace seguimiento; tu equipo recibe a cada interesado con la ficha lista y se dedica a vender y atender. Además queda capacitado para operarlo.</div></details>
+      <details class="faq"><summary>¿Mis miembros van a sentir esto como spam?</summary><div class="faq-a">Los mensajes salen <b>desde el número del gimnasio, con el nombre de cada persona</b> y en tono humano. Quien responde detiene la secuencia al instante, y quien pide no recibir más queda fuera automáticamente.</div></details>
+      <details class="faq"><summary>Mis miembros nuevos duran 30 días y se van. ¿De qué sirve llenar el gimnasio?</summary><div class="faq-a">Exacto: por eso esta propuesta tiene <b>dos frentes</b>. La reactivación llena, y el sistema de retención (onboarding de 30 días, alertas de inasistencia, medallas y rescate) hace que se queden. Cada mes extra de un miembro son $65 directos a caja.</div></details>
+      <details class="faq"><summary>¿Qué pasa cuando terminan los 6 meses?</summary><div class="faq-a">Tú decides: renuevas la gestión completa, o pasas a modo <b>Sistema Activo por $247/mes</b>, que mantiene la plataforma, las secuencias y las alertas de retención funcionando. El playbook queda documentado y es tuyo.</div></details>
+      <details class="faq"><summary>¿De quién son los datos y los contactos?</summary><div class="faq-a"><b>Siempre de Lion Gym.</b> La base de datos, las conversaciones y los números te pertenecen y se exportan cuando quieras.</div></details>
+      <details class="faq"><summary>¿Cuándo veo el primer resultado?</summary><div class="faq-a">Los primeros mensajes salen entre el <b>día 14 y 21</b>, y los primeros regresos llegan ese mismo mes. Y está la <b>Garantía Qiu de 30 días</b>: si el sistema no está funcionando y generando los primeros reactivados en el primer mes, devolvemos tu inversión.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cierre" id="cierre">
+  <div class="wrap cierre-grid">
+    <div>
+      <div class="eyebrow reveal"><span class="chev">»»»</span> Siguiente movimiento</div>
+      <h2 class="display reveal d1" style="font-size:clamp(32px,4.6vw,50px);margin-top:14px"><span class="skew">Hagamos rugir a <span class="gold-grad">Lion Gym</span></span></h2>
+      <div class="pasos reveal d2">
+        <div class="paso"><div class="p-n">1</div><div><b>Aprobación</b><p>Confirmación de la propuesta y pago de la implementación de $750.</p></div></div>
+        <div class="paso"><div class="p-n">2</div><div><b>Kickoff en 48 horas</b><p>Reunión de arranque, entrega de la base de datos y calibración del ticket real.</p></div></div>
+        <div class="paso"><div class="p-n">3</div><div><b>Primeros mensajes en 14 a 21 días</b><p>La secuencia empieza a tocar a los 300. Los primeros regresos, ese mismo mes.</p></div></div>
+      </div>
+      <a class="btn btn-oro reveal d3" href="https://wa.me/5804248831167" id="cta-whatsapp">Confirmar y agendar kickoff <span class="chev">»»»</span></a>
+      <!-- REEMPLAZAR href por el enlace de WhatsApp de Qiu Agency, ej: https://wa.me/58XXXXXXXXXX -->
+      <div class="urgencia reveal d4" style="margin-top:26px">
+        <div class="u-t">Cada semana cuenta</div>
+        <p>Un ex-miembro se enfría más con cada mes sin contacto. Los 300 de hoy no serán 300 en diciembre.</p>
+        <div class="u-val">Propuesta válida por 15 días · Julio 2026</div>
+      </div>
+    </div>
+    <div class="cierre-logo reveal d2">
+      <!-- Opcional: sustituir por el logo real: <img src="img/logo.png" alt="Lion Gym"> -->
+      <div class="cl-brand">
+        <div class="clb display"><span class="skew">LION<br><span class="gold-grad">GYM</span></span></div>
+        <div class="clb-sub">Lechería · Anzoátegui</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="f-qiu"><span class="qiu-mono">Qiu</span>QIU AGENCY</div>
+    <div class="f-txt">Propuesta preparada por Qiu Agency · Marketing &amp; Automatización · Lion Gym, Lechería</div>
+    <div class="f-txt num">$65 ticket · 645 » 800 · 90 días</div>
+  </div>
+</footer>
+
+<button class="tour-fab" id="tour-fab">Recorrido guiado <span style="color:var(--amarillo)">»</span></button>
+<div class="tour-card" id="tour-card" role="dialog" aria-label="Recorrido guiado">
+  <div class="tc-top"><span class="tc-step" id="tc-step">PASO 1 DE 12</span><button class="tc-x" id="tc-x" aria-label="Cerrar recorrido">×</button></div>
+  <b id="tc-title"></b>
+  <p id="tc-text"></p>
+  <div class="tc-btns">
+    <button class="tc-btn" id="tc-prev">« Anterior</button>
+    <button class="tc-btn next" id="tc-next">Siguiente »</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fmt = function(n){ return '$' + Math.round(n).toLocaleString('es-VE'); };
+  var fmtN = function(n){ return Math.round(n).toLocaleString('es-VE'); };
+
+  var topbar = document.getElementById('topbar');
+  var sentinel = document.getElementById('nav-sentinel');
+  new IntersectionObserver(function(entries){
+    topbar.classList.toggle('scrolled', !entries[0].isIntersecting);
+  }).observe(sentinel);
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.18});
+  document.querySelectorAll('.reveal,#chart').forEach(function(el){ io.observe(el); });
+
+  var counters = document.querySelectorAll('[data-count]');
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      var el = e.target, target = +el.dataset.count, prefix = el.dataset.prefix || '';
+      var inner = el.querySelector('i');
+      var setV = function(v){
+        var txt = prefix + fmtN(v);
+        if(inner){ inner.textContent = txt; } else { el.textContent = txt; }
+      };
+      if(reduce){ setV(target); return; }
+      var t0 = null, dur = 1300;
+      var step = function(ts){
+        if(!t0) t0 = ts;
+        var p = Math.min((ts - t0)/dur, 1);
+        setV(target * (1 - Math.pow(1-p, 3)));
+        if(p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
+  },{threshold:.5});
+  counters.forEach(function(el){ cio.observe(el); });
+
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabBtns.forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  var TICKET = 65, SETUP = 750;
+  var range = document.getElementById('c-range');
+  var planBtns = document.querySelectorAll('.pt-btn');
+  var plan = 747;
+  var out = {
+    n: document.getElementById('c-n'),
+    mes: document.getElementById('c-mes'),
+    ano: document.getElementById('c-ano'),
+    roi: document.getElementById('c-roi'),
+    pay: document.getElementById('c-pay'),
+    goal: document.getElementById('c-goal')
+  };
+  function calc(){
+    var n = +range.value;
+    var pct = (n - +range.min)/(+range.max - +range.min)*100;
+    range.style.setProperty('--fill', pct + '%');
+    var mes = n * TICKET;
+    var ano = mes * 12;
+    var invAno = SETUP + plan * 12;
+    var roi = ano / invAno;
+    var pay = Math.ceil(plan / TICKET);
+    out.n.textContent = n;
+    out.goal.textContent = n;
+    out.mes.textContent = fmt(mes);
+    out.ano.textContent = fmt(ano);
+    out.roi.textContent = roi.toFixed(1).replace('.', ',') + '×';
+    out.pay.textContent = pay + ' miembros';
+  }
+  range.addEventListener('input', calc);
+  planBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      planBtns.forEach(function(x){ x.classList.remove('active'); x.setAttribute('aria-checked','false'); });
+      b.classList.add('active');
+      b.setAttribute('aria-checked','true');
+      plan = +b.dataset.plan;
+      calc();
+    });
+  });
+  calc();
+
+  var steps = [
+    {sec:'#inicio', hl:'.hero-visual', t:'Bienvenido a tu propuesta', d:'Todo lo que ves está calculado con los números reales de Lion Gym. Usa "Siguiente" para recorrerla en 2 minutos.'},
+    {sec:'.strip', hl:'.strip-grid', t:'Tus números de hoy', d:'645 activos, 300 inactivos y la facturación actual frente a la meta de 800. De aquí sale todo lo demás.'},
+    {sec:'#diagnostico', hl:'.hueco', t:'El dinero dormido', d:'$19.500 al mes en ex-miembros que ya te conocen. Recuperar solo la mitad cumple la meta completa.'},
+    {sec:'#metodo', hl:'.tabs', t:'El método en 4 motores', d:'Toca cada pestaña: reactivación, oferta irresistible, escalera de ascenso y adquisición local. Gym Launch aplicado a Lechería.'},
+    {sec:'#oferta', hl:'.stack', t:'El Reto León', d:'$497 de valor por $147, con garantía total y 50 cupos verificables. La oferta que reactiva y asciende a membresía.'},
+    {sec:'#retencion', hl:'#ret-seq', t:'El que entra, se queda', d:'El patrón de los 30 días se ataca desde el día 1: onboarding guiado, alertas de inasistencia y medallas. Retener 40 al mes son $2.600.'},
+    {sec:'#sistema', hl:'.flow', t:'La máquina 24/7', d:'Lion Growth System responde en menos de 5 minutos, agenda, recuerda y celebra cada hito. Nadie se queda esperando.'},
+    {sec:'#calculadora', hl:'.calc-panel', t:'Muévelo tú mismo', d:'Arrastra la palanca de miembros recuperados y cambia de plan: el retorno se recalcula en vivo con tu ticket de $65.'},
+    {sec:'.proj', hl:'.chart', t:'Camino a 800', d:'Proyección conservadora a 90 días, calibrada con tus datos reales en el kickoff.'},
+    {sec:'#plan', hl:'.tl', t:'Seis meses, dos ediciones del Reto', d:'Implementación, lanzamiento, meta y consolidación. Los primeros mensajes salen entre el día 14 y 21.'},
+    {sec:'#inversion', hl:'.total-bar', t:'Un solo precio, todo incluido', d:'$747 al mes con plataforma, gestión y la Garantía Qiu de 30 días. Se paga con 12 miembros.'},
+    {sec:'#cierre', hl:'.urgencia', t:'Siguiente movimiento', d:'Tres pasos y arrancamos esta misma semana. Los 300 de hoy no serán 300 en diciembre.'}
+  ];
+  var fab = document.getElementById('tour-fab'),
+      card = document.getElementById('tour-card'),
+      tcStep = document.getElementById('tc-step'),
+      tcTitle = document.getElementById('tc-title'),
+      tcText = document.getElementById('tc-text'),
+      btnPrev = document.getElementById('tc-prev'),
+      btnNext = document.getElementById('tc-next'),
+      btnX = document.getElementById('tc-x'),
+      startBtn = document.getElementById('tour-start');
+  var idx = -1, hlEl = null;
+  function clearHl(){ if(hlEl){ hlEl.classList.remove('tour-hl'); hlEl = null; } }
+  function show(i){
+    idx = i;
+    var s = steps[i];
+    clearHl();
+    var sec = document.querySelector(s.sec);
+    if(sec) sec.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+    var el = document.querySelector(s.hl);
+    if(el){ hlEl = el; el.classList.add('tour-hl'); }
+    tcStep.textContent = 'PASO ' + (i+1) + ' DE ' + steps.length;
+    tcTitle.textContent = s.t;
+    tcText.textContent = s.d;
+    btnPrev.disabled = (i === 0);
+    btnNext.textContent = (i === steps.length - 1) ? 'Terminar' : 'Siguiente »';
+    card.classList.add('on');
+    fab.classList.add('hide');
+  }
+  function endTour(){ clearHl(); card.classList.remove('on'); fab.classList.remove('hide'); idx = -1; }
+  fab.addEventListener('click', function(){ show(0); });
+  if(startBtn) startBtn.addEventListener('click', function(e){ e.preventDefault(); show(0); });
+  btnNext.addEventListener('click', function(){ (idx >= steps.length - 1) ? endTour() : show(idx + 1); });
+  btnPrev.addEventListener('click', function(){ if(idx > 0) show(idx - 1); });
+  btnX.addEventListener('click', endTour);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && idx >= 0) endTour(); });
+})();
+</script>
+</body>
+</html>
