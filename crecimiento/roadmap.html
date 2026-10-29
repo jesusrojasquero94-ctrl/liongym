@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lion Gym · Camino a 800</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Dark editorial board, gold accent, matching the Lion Gym × Qiu portal */
+  :root{
+    --bg:#0f0f0f; --panel:#181818; --line:#2a2a2a; --fg:#f2efe8; --muted:#9a968d;
+    --gold:#E3A72F; --gold2:#F5C860; --ok:#5fbf7a; --warn:#e6b450; --bad:#e56b5d;
+    --display:"Archivo Black","Inter",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+  .wrap{max-width:1080px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+  .top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .top b{color:var(--fg)}
+  .live{display:inline-flex;align-items:center;gap:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(95,191,122,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(95,191,122,0)}100%{box-shadow:0 0 0 0 rgba(95,191,122,0)}}
+  @media (prefers-reduced-motion: reduce){.dot{animation:none}}
+  .hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px}
+  @media (max-width:760px){.hero{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;min-width:0}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  h1{font-family:var(--display);font-size:clamp(28px,5vw,44px);line-height:1.05;margin:6px 0 0;text-wrap:balance}
+  h2{font-family:var(--display);font-size:20px;margin:4px 0 2px;font-weight:400}
+  .note{color:var(--muted);font-size:13px;margin:4px 0 16px}
+  .count{font-family:var(--display);font-size:clamp(72px,14vw,132px);line-height:.95;color:var(--gold2);font-variant-numeric:tabular-nums;margin:14px 0 6px}
+  .of{color:var(--muted)} .of b{color:var(--fg)}
+  .bar{height:16px;border-radius:8px;background:#262626;margin-top:18px;overflow:hidden}
+  .fill{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+  .scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px;font-variant-numeric:tabular-nums}
+  .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .tile{border:1px solid var(--line);border-radius:10px;padding:14px}
+  .tile .l{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .tile .n{font-family:var(--display);font-size:30px;margin-top:4px;font-variant-numeric:tabular-nums}
+  .tile .n.gold{color:var(--gold2)}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:20px}
+  svg text{font-family:var(--body)}
+  .seg{display:grid;grid-template-columns:minmax(0,9.5rem) minmax(0,1fr) 3rem;gap:10px;align-items:center;font-size:13px;margin:8px 0}
+  .seg .track{height:20px;background:#222;border-radius:4px;overflow:hidden}
+  .seg .b{height:100%;background:var(--gold);border-radius:4px}
+  .seg .b.p1{background:var(--gold2)}
+  .seg .v{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+  .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:12px}
+  .ph{border-top:3px solid var(--gold);background:#141414;border-radius:0 0 10px 10px;padding:14px}
+  .ph .m{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .ph .f{font-weight:700;margin:4px 0}
+  .ph .d{color:var(--muted);font-size:13px}
+  .tbl{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  td.d{color:var(--muted);font-size:13px}
+  .chip{display:inline-block;font-size:12px;font-weight:600;padding:1px 9px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+  .chip.ok{color:var(--ok)} .chip.warn{color:var(--warn)} .chip.bad{color:var(--bad)}
+  .foot{color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .chev{color:var(--gold);font-weight:800;letter-spacing:-2px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><span><b>LION GYM</b> · LECHERÍA</span><span class="live"><span class="dot"></span><span id="estado">En vivo</span></span></div>
+
+  <section class="hero">
+    <div class="card">
+      <div class="eyebrow">Miembros activos hoy</div>
+      <h1>Camino a 800 miembros</h1>
+      <div class="count" id="count">—</div>
+      <div class="of">de una meta de <b id="meta">—</b> · faltan <b id="faltan">—</b> · avance <b id="avance">—</b></div>
+      <div class="bar"><div class="fill" id="fill"></div></div>
+      <div class="scale"><span>0</span><span id="metaEnd">800</span></div>
+      <p class="note" id="fuente">—</p>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Para cerrar la brecha</div>
+      <h2>Lo que falta</h2>
+      <p class="note">La reactivación de la base cierra la meta sin buscar desconocidos.</p>
+      <div class="tiles">
+        <div class="tile"><div class="l">Faltan</div><div class="n gold" id="t-faltan">—</div></div>
+        <div class="tile"><div class="l">Leads por cerrar</div><div class="n" id="t-leads">—</div></div>
+        <div class="tile"><div class="l">Calientes + pago</div><div class="n" id="t-p1">—</div></div>
+        <div class="tile"><div class="l">Cierre necesario</div><div class="n" id="t-tasa">—</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <div class="eyebrow">Roadmap 90 días</div>
+      <h2>Meta mensual vs. nivel de hoy</h2>
+      <p class="note">Metas de la propuesta: 645 → 685 → 740 → 800. La línea punteada es el conteo actual.</p>
+      <div id="chart"></div>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Auditoría oct 2026</div>
+      <h2>Leads por segmento</h2>
+      <p class="note">667 contactos que pidieron información, con etiqueta auditoria-oct26.</p>
+      <div id="leads"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="eyebrow">Plan de 6 meses</div>
+    <h2>Fases</h2>
+    <p class="note">Del lanzamiento a la segunda edición del Reto León.</p>
+    <div class="phases" id="fases"></div>
+  </section>
+
+  <section class="card">
+    <div class="eyebrow">Sistema en GoHighLevel</div>
+    <h2>Qué está listo y qué falta</h2>
+    <p class="note">Estado de flujos, plantillas y etiquetas.</p>
+    <div class="tbl"><table><thead><tr><th>Componente</th><th>Estado</th><th>Detalle</th></tr></thead><tbody id="sistema"></tbody></table></div>
+  </section>
+
+  <div class="foot"><span>Lion Growth System · datos en <code>crecimiento/datos.json</code></span><span class="chev">»»»</span></div>
+</main>
+
+<script>
+const FALLBACK = {"actualizado":"2026-10-28","fuente":"Contactos con la etiqueta \"activo\" en GoHighLevel (Lion Gym)","miembros_activos":639,"metas":[{"hito":"Inicio","meta":645},{"hito":"Mes 1","meta":685},{"hito":"Mes 2","meta":740},{"hito":"Mes 3","meta":800}],"leads":[{"segmento":"lead-caliente","contactos":18},{"segmento":"lead-pago-pendiente","contactos":9},{"segmento":"lead-tibio","contactos":193},{"segmento":"lead-futuro","contactos":17},{"segmento":"lead-renovacion","contactos":13},{"segmento":"lead-solo-llamada","contactos":417}],"fases":[],"sistema":[]};
+const nf = new Intl.NumberFormat('es-VE');
+const $ = (id) => document.getElementById(id);
+let shown = 0;
+
+function countTo(target){
+  const el = $('count');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || shown === target){ el.textContent = nf.format(target); shown = target; return; }
+  const from = shown, t0 = performance.now(), dur = 1200;
+  const step = (t) => {
+    const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+    el.textContent = nf.format(Math.round(from + (target - from) * e));
+    if (k < 1) requestAnimationFrame(step); else shown = target;
+  };
+  requestAnimationFrame(step);
+}
+
+function chart(metas, hoy){
+  const box = $('chart'); const W = Math.max(280, box.clientWidth), H = 240, ml = 40, mr = 74, mt = 26, mb = 28;
+  const lo = Math.floor((Math.min(hoy, ...metas.map(m => m.meta)) - 30) / 10) * 10;
+  const hi = Math.ceil((Math.max(...metas.map(m => m.meta)) + 20) / 10) * 10;
+  const x = (i) => ml + (metas.length === 1 ? 0 : i * (W - ml - mr) / (metas.length - 1));
+  const y = (v) => mt + (hi - v) / (hi - lo) * (H - mt - mb);
+  const ticks = []; for (let v = Math.ceil(lo / 50) * 50; v <= hi; v += 50) ticks.push(v);
+  let s = `<svg width="100%" viewBox="0 0 ${W} ${H}" role="img" aria-label="Metas de miembros por mes">`;
+  ticks.forEach(v => { s += `<line x1="${ml}" x2="${W - mr}" y1="${y(v)}" y2="${y(v)}" stroke="#2a2a2a"/><text x="${ml - 6}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="#9a968d">${nf.format(v)}</text>`; });
+  s += `<line x1="${ml}" x2="${W - mr}" y1="${y(hoy)}" y2="${y(hoy)}" stroke="#5fbf7a" stroke-width="2" stroke-dasharray="5 4"/><text x="${W - mr + 6}" y="${y(hoy) + 4}" font-size="12" font-weight="700" fill="#5fbf7a">Hoy ${nf.format(hoy)}</text>`;
+  s += `<polyline fill="none" stroke="#E3A72F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" points="${metas.map((m, i) => `${x(i)},${y(m.meta)}`).join(' ')}"/>`;
+  metas.forEach((m, i) => { s += `<circle cx="${x(i)}" cy="${y(m.meta)}" r="5" fill="#F5C860"><title>${m.hito}: meta ${nf.format(m.meta)}</title></circle><text x="${x(i)}" y="${y(m.meta) - 10}" text-anchor="middle" font-size="12" font-weight="700" fill="#f2efe8">${nf.format(m.meta)}</text><text x="${x(i)}" y="${H - 8}" text-anchor="middle" font-size="11" fill="#9a968d">${m.hito}</text>`; });
+  box.innerHTML = s + '</svg>';
+}
+
+function esc(t){ const d = document.createElement('div'); d.textContent = t; return d.innerHTML; }
+
+function render(d){
+  const meta = Math.max(...d.metas.map(m => m.meta));
+  const hoy = d.miembros_activos, faltan = Math.max(0, meta - hoy);
+  const totalLeads = d.leads.reduce((a, l) => a + l.contactos, 0);
+  const p1 = d.leads.filter(l => /caliente|pago/.test(l.segmento)).reduce((a, l) => a + l.contactos, 0);
+  countTo(hoy);
+  $('meta').textContent = nf.format(meta); $('metaEnd').textContent = nf.format(meta);
+  $('faltan').textContent = nf.format(faltan); $('t-faltan').textContent = nf.format(faltan);
+  $('avance').textContent = Math.round(hoy / meta * 100) + '%';
+  $('fill').style.width = Math.min(100, hoy / meta * 100) + '%';
+  $('t-leads').textContent = nf.format(totalLeads); $('t-p1').textContent = nf.format(p1);
+  $('t-tasa').textContent = (faltan / totalLeads * 100).toFixed(1) + '%';
+  $('fuente').textContent = `${d.fuente}. Último corte: ${new Date(d.actualizado + 'T12:00:00').toLocaleDateString('es-VE', {day:'numeric', month:'long', year:'numeric'})}.`;
+  chart(d.metas, hoy);
+  const max = Math.max(...d.leads.map(l => l.contactos));
+  $('leads').innerHTML = d.leads.map(l => `<div class="seg"><span>${esc(l.segmento)}</span><div class="track"><div class="b ${/caliente|pago/.test(l.segmento) ? 'p1' : ''}" style="width:${l.contactos / max * 100}%"></div></div><span class="v">${nf.format(l.contactos)}</span></div>`).join('');
+  if (d.fases.length) $('fases').innerHTML = d.fases.map(f => `<div class="ph"><div class="m">${esc(f.mes)}</div><div class="f">${esc(f.fase)}</div><div class="d">${esc(f.detalle)}</div></div>`).join('');
+  const cls = { 'Listo': 'ok', 'Pendiente Meta': 'warn', 'Borrador': 'warn', 'Falta': 'bad' };
+  if (d.sistema.length) $('sistema').innerHTML = d.sistema.map(r => `<tr><td>${esc(r.componente)}</td><td><span class="chip ${cls[r.estado] || 'warn'}">${esc(r.estado)}</span></td><td class="d">${esc(r.detalle)}</td></tr>`).join('');
+}
+
+let data = FALLBACK;
+async function load(){
+  try {
+    const r = await fetch('datos.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    data = await r.json();
+    $('estado').textContent = 'En vivo · se actualiza cada minuto';
+  } catch (e) {
+    $('estado').textContent = 'Datos guardados';
+  }
+  render(data);
+}
+load();
+setInterval(load, 60000);
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => chart(data.metas, data.miembros_activos), 150); });
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "actualizado": "2026-10-28",
+  "fuente": "Contactos con la etiqueta \"activo\" en GoHighLevel (Lion Gym)",
+  "miembros_activos": 639,
+  "historial": [
+    { "fecha": "2026-10-28", "activos": 639 }
+  ],
+  "metas": [
+    { "hito": "Inicio", "meta": 645 },
+    { "hito": "Mes 1", "meta": 685 },
+    { "hito": "Mes 2", "meta": 740 },
+    { "hito": "Mes 3", "meta": 800 }
+  ],
+  "leads": [
+    { "segmento": "lead-caliente", "contactos": 18 },
+    { "segmento": "lead-pago-pendiente", "contactos": 9 },
+    { "segmento": "lead-tibio", "contactos": 193 },
+    { "segmento": "lead-futuro", "contactos": 17 },
+    { "segmento": "lead-renovacion", "contactos": 13 },
+    { "segmento": "lead-solo-llamada", "contactos": 417 }
+  ],
+  "fases": [
+    { "mes": "Mes 1", "fase": "Implementación y lanzamiento", "detalle": "Sistema configurado, contactos migrados y secuencia de reactivación activa en la semana 3." },
+    { "mes": "Mes 2", "fase": "Reto León · Edición 1", "detalle": "50 cupos con contador en vivo y primeras transformaciones en video." },
+    { "mes": "Mes 3", "fase": "Meta: 800 miembros", "detalle": "Reactivados y ascensos del Reto cierran la brecha. Revisión de números con la dirección." },
+    { "mes": "Mes 4–5", "fase": "Escala local", "detalle": "Pauta hiperlocal, referidos y reseñas encendidos." },
+    { "mes": "Mes 6", "fase": "Reto Edición 2 y consolidación", "detalle": "Segunda edición, playbook documentado y sistema en piloto automático." }
+  ],
+  "sistema": [
+    { "componente": "Base de contactos etiquetada", "estado": "Listo", "detalle": "2.784 contactos; 667 leads con etiqueta auditoria-oct26" },
+    { "componente": "WhatsApp Business conectado", "estado": "Listo", "detalle": "Aprobado por Meta" },
+    { "componente": "8 plantillas de seguimiento", "estado": "Pendiente Meta", "detalle": "Enviadas el 28 oct 2026" },
+    { "componente": "Secuencia de reactivación 30 días", "estado": "Borrador", "detalle": "Solo existe el mensaje del día 1" },
+    { "componente": "Bot de seguimiento de leads", "estado": "Borrador", "detalle": "Solo se activa si el lead escribe primero" },
+    { "componente": "Reto León: inscripción", "estado": "Borrador", "detalle": "Falta página con contador de cupos y pago" },
+    { "componente": "Retención 30 días", "estado": "Borrador", "detalle": "0 inscritos" },
+    { "componente": "Alerta de inasistencia", "estado": "Falta", "detalle": "No existe flujo" },
+    { "componente": "Reseñas automáticas", "estado": "Borrador", "detalle": "En borrador" },
+    { "componente": "Programa de referidos", "estado": "Falta", "detalle": "No existe flujo" }
+  ]
+}
